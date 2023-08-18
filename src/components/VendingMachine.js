@@ -16,7 +16,7 @@ function VendingMachine(props) {
   const [error, setError] = useState(null);
 
   const buyProduct = (product) => {
-    fetch("vendingMachine/buyProduct", {
+    fetch("/api/vendingMachine/buyProduct", {
       body: JSON.stringify(product),
       method: "POST",
       headers: {
