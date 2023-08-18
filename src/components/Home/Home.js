@@ -15,7 +15,7 @@ function Home(){
     useEffect(() => {
         setIsLoaded(true);
     
-        fetch('/api/vendingMachine/getProduct')
+        fetch('/vendingMachine/getProduct')
           .then(response => response.json())
           .then(
             (result) => {

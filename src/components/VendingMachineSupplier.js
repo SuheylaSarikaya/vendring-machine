@@ -21,7 +21,7 @@ function VendingMachineSupplier() {
   const [collect, setCollect] = useState(false);
 
   const resetMachine = () => {
-    fetch("/api/vendingMachine/resetMachine", {
+    fetch("/vendingMachine/resetMachine", {
       body: JSON.stringify(),
       method: "POST",
       headers: {
@@ -36,7 +36,7 @@ function VendingMachineSupplier() {
   };
 
   const collectMoney = () => {
-    fetch("/api/vendingMachine/collectMoney", {
+    fetch("/vendingMachine/collectMoney", {
       body: JSON.stringify(selectedProduct),
       method: "POST",
       headers: {
@@ -53,7 +53,7 @@ function VendingMachineSupplier() {
   useEffect(() => {
     setIsLoaded(true);
 
-    fetch("/api/vendingMachine/getProduct")
+    fetch("/vendingMachine/getProduct")
       .then((response) => response.json())
       .then(
         (result) => {

@@ -6,7 +6,7 @@ import { positions } from '@mui/system';
 function PriceUpdate({ selectedProduct, setSelectedProduct }) {
 
   const updatePrice = () => {
-    fetch("/api/vendingMachine/updatePriceProduct", {
+    fetch("/vendingMachine/updatePriceProduct", {
       body: JSON.stringify(selectedProduct),
       method: "POST",
       headers: {
