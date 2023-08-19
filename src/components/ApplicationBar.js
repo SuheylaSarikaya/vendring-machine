@@ -51,7 +51,7 @@ function ApplicationBar() {
               HOME
             </Button>
           </Link>
-          {!localStorage.getItem("auth")&&<Link to="/loginAdmin">
+          {<Link to="/loginAdmin">
             <Button
               style={{ color: "#F8F8FF", fontSize: 15 }}
               color="inherit"
@@ -63,17 +63,7 @@ function ApplicationBar() {
             </Button>
           </Link>
             }
-            {localStorage.getItem("auth")&&<Button
-              style={{ color: "#F8F8FF", fontSize: 15 }}
-              color="inherit"
-              onClick={() => {
-                localStorage.removeItem("auth");
-                navigate('/loginAdmin');
-              }}
-            >
-              LOGOUT
-            </Button>
-          }
+            
           
         </Toolbar>
       </AppBar>
@@ -82,3 +72,18 @@ function ApplicationBar() {
 }
 
 export default ApplicationBar;
+
+/*
+{<Button
+              style={{ color: "#F8F8FF", fontSize: 15 }}
+              color="inherit"
+              onClick={() => {
+      
+                navigate('/loginAdmin');
+              }}
+            >
+              LOGOUT
+            </Button>
+          }
+          
+          */

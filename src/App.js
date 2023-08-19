@@ -11,10 +11,6 @@ import ApplicationBar from './components/ApplicationBar';
 import VendingMachineSupplier from './components/VendingMachineSupplier';
 function App() {
 
-  if(localStorage.getItem("auth")){
-    return <Navigate to="/loginAdmin" replace={true} />
-  }
-
   return (
     <div className="App">
       <BrowserRouter>
