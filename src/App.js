@@ -23,10 +23,7 @@ function App() {
           <Route exact path='/' element={<Home/>}></Route>
           <Route exact path="/loginAdmin"  element={<Login></Login> }/>  
           <Route exact path="/adminPage" element={localStorage.getItem("auth") &&<VendingMachineSupplier/>} />
-        
-          
-    
-        
+             
         </Routes>
       </BrowserRouter>
 
