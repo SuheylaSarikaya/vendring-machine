@@ -1,0 +1,6 @@
+
+{
+    "rewrites": [
+        { "source": "/api/:path*", "destination": "https://app-vending-machine-1-4d0474825892.herokuapp.com/:path*"}
+    ]
+}
