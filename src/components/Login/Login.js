@@ -10,26 +10,21 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import   { useEffect, useState} from 'react';
-import {Routes, Route, useNavigate, Link, Navigate} from 'react-router-dom';
-import Protected from '../Protected';
-import { Exception } from 'sass';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
-import { useAuth } from "../Auth";
+
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
-function Login(props) {
+function Login() {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError]= useState(false);
   const [isLogin,setLogin]=useState(false);
   const navigate = useNavigate();
-  const { setAuthTokens } = useAuth();
-
-  const referer = props.location.state ? props.location.state.referer : "/";
 
  
 
@@ -48,8 +43,6 @@ function Login(props) {
             console.log(data);
             if(data.result==='User is logged in.'){ 
             navigate('/adminPage');
-            setLogin(true);
-            setAuthTokens(data.result);
             localStorage.setItem("auth",JSON.stringify(user));
           }else{
 
@@ -74,9 +67,6 @@ function Login(props) {
     }
   }, []);  
   
-  if (isLogin) {
-    return <Navigate to={referer} />;
-  }
 
 
 
