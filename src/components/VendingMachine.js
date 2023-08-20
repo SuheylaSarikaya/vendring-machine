@@ -142,7 +142,7 @@ function VendingMachine(props) {
             >
               <ImageSrc
                 style={{
-                  backgroundImage: `${product.img}`,
+                  backgroundImage: `url(${product.img})`,
                   height: "570px",
                 }
               }         
