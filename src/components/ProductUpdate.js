@@ -6,7 +6,7 @@ function ProductUpdate({ selectedProduct, setSelectedProduct }) {
 
 
   const updateCount = () => {
-    fetch("/vendingMachine/updateCountProduct", {
+    fetch("/api/vendingMachine/updateCountProduct", {
       body: JSON.stringify(selectedProduct),
       method: "POST",
       headers: {

@@ -31,7 +31,7 @@ function Login() {
 
   const [state, setState] = useState(false);
    const login = async (user)=>{
-     fetch('/vendingMachine/login',{
+     fetch('/api/vendingMachine/login',{
         body: JSON.stringify(user),
         method: "POST", headers: {
         "Content-Type": "application/json",
