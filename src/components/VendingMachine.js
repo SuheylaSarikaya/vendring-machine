@@ -143,11 +143,13 @@ function VendingMachine(props) {
                 style={{
                   backgroundImage: `${product.img}`,
                   height: "570px",
-                }}         
-                 alt={"drive image"}
+                }
+              }         
+                 
               />
+            
               <ImageBackdrop className="MuiImageBackdrop-root" />
-              <Image>
+              <Image alt={"drive image"}>
                 <Typography
                   component="span"
                   variant="subtitle1"
@@ -158,6 +160,7 @@ function VendingMachine(props) {
                     pt: 2,
                     pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
                   }}
+                  alt={"drive image"}
                 >
                   {product.name}
                   <ImageMarked className="MuiImageMarked-root" />
