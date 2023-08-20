@@ -15,7 +15,7 @@ function App() {
   const [lstorage, setLstorage] = useState(false);
   
 
-  const updateLocalStorage = () => {
+  const updateLocalStorage = (lstorage) => {
     setLstorage(localStorage.getItem("auth"));
     console.log(lstorage);
   };
