@@ -46,7 +46,6 @@ function ApplicationBar() {
               color="inherit"
               onClick={() => {
                 <Home />;
-                localStorage.removeItem("auth");
                 localStorage.clear();
               }}
             >
@@ -71,7 +70,6 @@ function ApplicationBar() {
               onClick={() => {
                 localStorage.removeItem("auth");
                 localStorage.clear();
-                window.location.reload();
                 navigate('/loginAdmin');
               }}
             >
