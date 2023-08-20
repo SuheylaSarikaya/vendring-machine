@@ -10,7 +10,7 @@ import   { useEffect, useState} from 'react';
 import ApplicationBar from './components/ApplicationBar';
 import VendingMachineSupplier from './components/VendingMachineSupplier';
 function App() {
-
+ 
 
   return (
     <div className="App">
@@ -19,9 +19,11 @@ function App() {
         
         <Routes>
           <Route exact path='/' element={<Home/>}></Route>
-          <Route exact path="/loginAdmin"  element={<Login></Login> }/>  
-          <Route exact path="/adminPage" element={ <VendingMachineSupplier/>&&localStorage.getItem("auth")} />
-             
+          <Route exact path="/loginAdmin"  element={<Login></Login> }/>
+           {localStorage.getItem("auth")!=null}: 
+          <Route exact path="/adminPage" element={ <VendingMachineSupplier/>} /> ? 
+          <Route exact path="/loginAdmin"  element={<Login></Login> }/>
+                    
         </Routes>
       </BrowserRouter>
     </div>
