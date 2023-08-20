@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home/>}></Route>
           <Route exact path="/loginAdmin"  element={updateLocalStorage&&<Login></Login> }/>  
-          <Route exact path="/adminPage" element={ lstorage&&<VendingMachineSupplier/>} />
+          <Route exact path="/adminPage" element={ <VendingMachineSupplier/>&&lstorage} />
              
         </Routes>
       </BrowserRouter>
