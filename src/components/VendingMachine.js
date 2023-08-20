@@ -141,9 +141,10 @@ function VendingMachine(props) {
             >
               <ImageSrc
                 style={{
-                  backgroundImage: `url(data:image/jpeg;base64,${product.img})`,
+                  backgroundImage: `${product.img}`,
                   height: "570px",
-                }}
+                }}         
+                 alt={"drive image"}
               />
               <ImageBackdrop className="MuiImageBackdrop-root" />
               <Image>
