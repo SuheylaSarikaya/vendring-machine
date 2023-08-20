@@ -79,7 +79,7 @@ function VendingMachineSupplier() {
         className="Sup"
       >
         &nbsp;
-        {productList.map((product) => (
+        {Array.isArray(productList) ?productList.map((product) => (
           <Card sx={{ maxWidth: 400 }}>
             <CardMedia
               component="img"
@@ -116,7 +116,7 @@ function VendingMachineSupplier() {
               </Button>
             </CardActions>
           </Card>
-        ))}
+        )): null}
         &nbsp;
       </div>
       &nbsp;&nbsp;&nbsp;&nbsp;

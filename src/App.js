@@ -11,9 +11,7 @@ import ApplicationBar from './components/ApplicationBar';
 import VendingMachineSupplier from './components/VendingMachineSupplier';
 function App() {
 
-  if(localStorage.getItem("auth")){
-    return <Navigate to="/loginAdmin" replace={true} />
-  }
+
 
 
   return (
@@ -24,13 +22,13 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home/>}></Route>
           <Route exact path="/loginAdmin"  element={<Login></Login> }/>
-         
           <Route exact path='/adminPage' element={<VendingMachineSupplier  ></VendingMachineSupplier> }></Route>
           
         </Routes>
       </BrowserRouter>
 
     </div>
+    
   );
 }
 

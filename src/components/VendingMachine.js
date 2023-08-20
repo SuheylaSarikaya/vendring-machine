@@ -129,7 +129,7 @@ function VendingMachine(props) {
             position: "relative",
           }}
         >
-          {productList.map((product) => (
+          {Array.isArray(productList) ? productList.map((product) => (
             <ImageButton
               focusRipple
               key={product.name}
@@ -168,7 +168,7 @@ function VendingMachine(props) {
                 </Typography>
               </Image>
             </ImageButton>
-          ))}
+          )): null}
         </Box>
       </div>
       <div
