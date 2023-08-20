@@ -139,20 +139,21 @@ function VendingMachine(props) {
               }}
               onClick={() => handleProductSelect(product)}
             >
-              
               <ImageBackdrop className="MuiImageBackdrop-root" />
-              <Image alt={"drive image"}
-                            height="570px"
-                            src={`${product.img}`}
-                          style={{
-                            position: "absolute",
-                            left: 0,
-                            right: 0,
-                            top: 0,
-                            bottom: 0,
-                            backgroundSize: "cover",
-                            backgroundPosition: "center 40%",
-                          }}
+              <Image
+                component="img"
+                height="570px"
+                src={`${product.img}`}
+                alt={"drive image"}
+                sx={{
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                  top: 0,
+                  bottom: 0,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center 40%",
+                }}
               >
                 <Typography
                   component="span"
@@ -222,7 +223,7 @@ function VendingMachine(props) {
             backgroundColor: "#1E90FF",
             variant: "contained",
           }}
-          disabled={selectedProduct ==!null ? true : false}
+          disabled={selectedProduct == !null ? true : false}
         >
           {selectedProduct && (
             <p style={{ color: "#F8F8FF", fontSize: 18 }}>
