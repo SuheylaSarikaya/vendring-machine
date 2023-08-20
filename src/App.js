@@ -12,13 +12,6 @@ import VendingMachineSupplier from './components/VendingMachineSupplier';
 function App() {
 
 
-  const [lstorage, setLstorage] = useState(false);
-  
-
-  const updateLocalStorage = (lstorage) => {
-    setLstorage(localStorage.getItem("auth"));
-    console.log(lstorage);
-  };
 
 
   return (
@@ -28,8 +21,8 @@ function App() {
         
         <Routes>
           <Route exact path='/' element={<Home/>}></Route>
-          <Route exact path="/loginAdmin"  element={updateLocalStorage&&<Login></Login> }/>  
-          <Route exact path="/adminPage" element={ <VendingMachineSupplier/>&&lstorage} />
+          <Route exact path="/loginAdmin"  element={<Login></Login> }/>  
+          <Route exact path="/adminPage" element={ <VendingMachineSupplier/>&&localStorage.getItem("auth")} />
              
         </Routes>
       </BrowserRouter>
