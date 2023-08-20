@@ -48,5 +48,6 @@
     "express": "^4.18.2",
     "sass": "^1.66.0"
   },
-  "now-build" :"react-scripts build && mv build dist "
+  "now-build" :"react-scripts build && mv build dist ",
+  "proxy": "https://app-vending-machine-1-4d0474825892.herokuapp.com"
 }
