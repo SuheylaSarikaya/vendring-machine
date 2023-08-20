@@ -10,11 +10,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import   { useEffect, useState} from 'react';
-import {Routes, Route, useNavigate, Link, Redirect} from 'react-router-dom';
+import {Routes, Route, useNavigate, Link, Navigate} from 'react-router-dom';
 import Protected from '../Protected';
 import { Exception } from 'sass';
-import axios from "axios";
-import { useAuth } from "./Auth";
+
+import { useAuth } from "../Auth";
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -48,6 +48,7 @@ function Login(props) {
             console.log(data);
             if(data.result==='User is logged in.'){ 
             navigate('/adminPage');
+            setLogin(true);
             setAuthTokens(data.result);
             localStorage.setItem("auth",JSON.stringify(user));
           }else{
@@ -73,8 +74,8 @@ function Login(props) {
     }
   }, []);  
   
-  if (isLoggedIn) {
-    return <Redirect to={referer} />;
+  if (isLogin) {
+    return <Navigate to={referer} />;
   }
 
 

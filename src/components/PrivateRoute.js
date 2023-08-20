@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Navigate, Route } from "react-router-dom";
 
 import { useAuth } from "./Auth";
 
@@ -13,7 +13,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         authTokens ? (
           <Component {...props} />
         ) : (
-          <Redirect
+          <Navigate
             to={{ pathname: "/loginAdmin", state: { referer: props.location } }}
           />
         )

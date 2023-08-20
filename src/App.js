@@ -9,8 +9,8 @@ import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import   { useEffect, useState} from 'react';
 import ApplicationBar from './components/ApplicationBar';
 import VendingMachineSupplier from './components/VendingMachineSupplier';
-import { AuthContext } from "./Auth";
-import PrivateRoute from "./PrivateRoute";
+import { AuthContext } from "./components/Auth";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const [authTokens, setAuthTokens] = useState(
