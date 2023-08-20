@@ -21,9 +21,8 @@ function App() {
         
         <Routes>
           <Route exact path='/' element={<Home/>}></Route>
-          <Route exact path="/loginAdmin"  element={<Login></Login> }/>{ 
-          localStorage.getItem("auth") && 
-          <Route exact path="/adminPage" component={<VendingMachineSupplier/>} />
+          <Route exact path="/loginAdmin"  element={<Login></Login> }/>{ localStorage.getItem("auth") && 
+          <Route exact path="/adminPage" element={<VendingMachineSupplier/>} />
         }
           
     

@@ -66,7 +66,7 @@ function Login() {
     if(localStorage.getItem("auth")){
       navigate('/adminPage');
     }
-  }, []);
+  }, []);  
   
 
 
