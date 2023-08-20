@@ -83,9 +83,9 @@ function VendingMachineSupplier() {
           <Card sx={{ maxWidth: 400 }}>
             <CardMedia
               component="img"
-              alt=""
               height="400"
-              src={`data:image/jped;base64, ${product.img}`}
+              src={`${product.img}`}
+              alt={"drive image"}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
