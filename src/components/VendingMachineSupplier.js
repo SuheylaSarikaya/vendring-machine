@@ -68,6 +68,7 @@ function VendingMachineSupplier() {
   }, []);
 
   return (
+    
     <div>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <div

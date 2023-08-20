@@ -44,20 +44,30 @@ function Login() {
             console.log(data);
             if(data.result==='User is logged in.'){ 
             navigate('/adminPage');
+            localStorage.setItem("auth",JSON.stringify(user));
           }else{
 
+            localStorage.removeItem("auth");
             setIsLoaded(false);
             setError(true);
             alert("Login failed.");
           }
         },
         (error) => {
+          localStorage.removeItem("auth");
             setIsLoaded(false);
             setError(true);
           
         }          
     )    
   }
+
+  useEffect(() => {
+    if(localStorage.getItem("auth")){
+      navigate('/adminPage');
+    }
+  }, []);
+  
 
 
 
