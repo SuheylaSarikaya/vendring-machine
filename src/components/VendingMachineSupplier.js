@@ -65,13 +65,13 @@ function VendingMachineSupplier() {
       .then((response) => response.json())
       .then(
         (result) => {
-          setIsLoaded(true);
-          setProductList(result);
           if(localStorage.getItem("auth")){
             navigate('/adminPage');
           }else{
             navigate('/');
           }
+          setIsLoaded(true);
+          setProductList(result);
         },
         (error) => {
           setIsLoaded(false);
