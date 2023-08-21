@@ -20,8 +20,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home/>}></Route>
           <Route exact path="/loginAdmin"  element={<Login></Login> }/>
-           {console.log(localStorage.getItem("auth"))}
-           {localStorage.getItem("auth")}:<Route exact path="/adminPage" element={ <VendingMachineSupplier/>} />?<Route exact path="/loginAdmin"  element={<Login></Login> }/>
+           <Route exact path="/adminPage" element={<VendingMachineSupplier/>} />
                     
         </Routes>
       </BrowserRouter>

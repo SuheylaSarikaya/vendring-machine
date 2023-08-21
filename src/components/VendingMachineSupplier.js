@@ -5,12 +5,17 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
+import { useNavigate} from 'react-router-dom';
 import Typography from "@mui/material/Typography";
 import ProductUpdate from "./ProductUpdate";
 import PriceUpdate from "./PriceUpdate";
 import { styled } from "@mui/material/styles";
 import sup from "./VendingMachineSupplier.css";
+
+
+
 function VendingMachineSupplier() {
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [productList, setProductList] = useState([]);
   const [error, setError] = useState(null);
@@ -19,6 +24,7 @@ function VendingMachineSupplier() {
   const [count, setCount] = useState(null);
   const [reset, setReset] = useState(false);
   const [collect, setCollect] = useState(false);
+  const navigate = useNavigate();
 
   const resetMachine = () => {
     fetch("/api/vendingMachine/resetMachine", {
@@ -34,6 +40,8 @@ function VendingMachineSupplier() {
         console.log(data);
       });
   };
+
+
 
   const collectMoney = () => {
     fetch("/api/vendingMachine/collectMoney", {
@@ -59,14 +67,22 @@ function VendingMachineSupplier() {
         (result) => {
           setIsLoaded(true);
           setProductList(result);
+          if(localStorage.getItem("auth")){
+            navigate('/adminPage');
+          }else{
+            navigate('/');
+          }
         },
         (error) => {
           setIsLoaded(false);
           setError(true);
         }
-      );
+      )
+      
   }, []);
 
+
+ 
   return (
     
     <div>
